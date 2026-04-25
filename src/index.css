@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+  color: #0f172a;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.dark body {
+  background: linear-gradient(180deg, #0b1220 0%, #020617 100%);
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #0ea5e9;
+  color: #ffffff;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  margin-right: 2rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
