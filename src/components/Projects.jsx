@@ -17,11 +17,11 @@ const ProjectCard = ({ project }) => {
     openInNewTab(liveDemo);
   };
 
-  return (
-    <article
-      onClick={handleCardClick}
-      className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/60"
-    >
+  const cardClassName =
+    "group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/60";
+
+  const cardInner = (
+    <>
       {project.image ? (
         <img
           src={project.image}
@@ -44,6 +44,23 @@ const ProjectCard = ({ project }) => {
           View Project →
         </div>
       </div>
+    </>
+  );
+
+  if (project.title === "Farm2Market") {
+    return (
+      <div
+        onClick={() => window.open("https://farm2market-nu.vercel.app/", "_blank")}
+        className={cardClassName}
+      >
+        {cardInner}
+      </div>
+    );
+  }
+
+  return (
+    <article onClick={handleCardClick} className={cardClassName}>
+      {cardInner}
     </article>
   );
 };

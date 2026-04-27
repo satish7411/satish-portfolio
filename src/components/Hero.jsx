@@ -42,8 +42,10 @@ const Hero = ({ data }) => {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">{data.intro}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href={data.resumeUrl}
-              download
+              href="/assets/Satish-C-Resume.pdf"
+              download="Satish-C-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-brand-600 px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-brand-700"
             >
               Download Resume
